@@ -1,0 +1,624 @@
+body {
+  background: rgba(204, 229, 255, 0.7);
+  margin: 2em;
+  padding: 30px;
+  font-family: fantasy;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.navbar {
+  background: linear-gradient(to right, rgb(68, 168, 175), rgb(21, 80, 136));
+  padding: 1em;
+  margin: 0%;
+  text-align: center;
+}
+span {
+  color: white;
+  font-weight: bold;
+  font-size: larger;
+}
+.header1 {
+   padding: 10px;
+  text-align: center;
+  font-size: medium;
+  color: rgb(20, 60, 105);
+}
+.essays {
+  background-color: rgba(79, 178, 211, 0.2);
+  margin: 20px;
+  height: 170px;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.art {
+  color: rgb(64, 134, 126);
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.tech {
+  color: rgb(51, 97, 112);
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.lit {
+  color: rgb(21, 80, 136);
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.poems {
+  background-color: rgba(79, 178, 211, 0.2);
+  margin: 20px;
+  height: 350px;
+}
+.grid-container {
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-template-rows: 50px 100px 50px;
+  grid-gap: 10px;
+}
+.grid-item {
+  border-radius: 35px;
+  color: rgb(250, 250, 250);
+  font-size: 0.8em;
+}
+/*.contbar {
+  background: linear-gradient(to left, rgb(68, 168, 175), rgb(21, 80, 136));
+  height: 17px;
+  text-align: center;
+}*/
+
+/* 爱*/
+.button:active {
+  transform: translateY(5px);
+}
+
+#myBtn {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.2em;
+  font-family: fantasy;
+  background-color: rgba(204, 229, 255, 0);
+  border: none;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+.love-content {
+  font-size: large;
+  font-family: fantasy;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: rgba(255, 150, 150, 0.8);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid rgba(255, 205, 205, 0.6);
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* 你 */
+.button2:active {
+  transform: translateY(5px);
+}
+.button2.art {
+  transform: translateY(5px);
+}
+
+#myBtn2 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1em;
+  font-family: fantasy;
+  background-color: rgba(204, 229, 255, 0);
+  border: none;
+}
+
+/* The Modal (background) */
+.modal2 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+/* Modal Content/Box */
+.modal-content2 {
+  background-color: rgba(187, 124, 189, 0.801);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid rgba(255, 205, 255, 0.6);
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close2 {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* 我 */
+.button3:active {
+  transform: translateY(5px);
+}
+.button3.art {
+  transform: translateY(5px);
+}
+
+#myBtn3 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1em;
+  font-family: fantasy;
+  background-color: rgba(204, 229, 255, 0);
+  border: none;
+}
+
+/* The Modal (background) */
+.modal3 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+/* Modal Content/Box */
+.modal-content3 {
+  background-color: rgba(85, 194, 94, 0.822);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid rgba(134, 190, 139, 0.85);
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close3 {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+/* 人们 */
+.button4:active {
+  transform: translateY(5px);
+}
+.button4.art {
+  transform: translateY(5px);
+}
+
+#myBtn4 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.2em;
+  font-family: fantasy;
+  background-color: rgba(238, 185, 88, 0);
+  border: none;
+}
+
+/* The Modal (background) */
+.modal4 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+.modal-content4 {
+  background-color: rgba(238, 185, 88, 0.85);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid rgba(238, 185, 88, 0.85);
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close4 {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* 走路 */
+.button5:active {
+  transform: translateY(5px);
+}
+.button5.art {
+  transform: translateY(5px);
+}
+
+#myBtn5 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1em;
+  font-family: fantasy;
+  background-color: rgba(24, 112, 146, 0);
+  border: none;
+}
+
+/* The Modal (background) */
+.modal5 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+.modal-content5 {
+  background-color: rgba(57, 114, 136, 0.88);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid rgba(46, 106, 129, 0.6);
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close5 {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* 水 */
+.button6:active {
+  transform: translateY(5px);
+}
+.button6.art {
+  transform: translateY(5px);
+}
+
+#myBtn6 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1em;
+  font-family: fantasy;
+  background-color: rgba(24, 112, 146, 0);
+  border: none;
+}
+
+/* The Modal (background) */
+.modal6 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+.modal-content6 {
+  background-color: rgba(129, 213, 247, 0.829);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid rgba(110, 205, 243, 0.6);
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close6 {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* 阳光 */
+.button7:active {
+  transform: translateY(5px);
+}
+.button7.art {
+  transform: translateY(5px);
+}
+
+#myBtn7 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1em;
+  font-family: fantasy;
+  background-color: rgba(24, 112, 146, 0);
+  border: none;
+}
+
+/* The Modal (background) */
+.modal7 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+.modal-content7 {
+  background-color: rgba(253, 127, 23, 0.747);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid rgba(255, 115, 0, 0.76);
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close7 {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* 胡思乱想 */
+.button8:active {
+  transform: translateY(5px);
+}
+.button8.art {
+  transform: translateY(5px);
+}
+
+#myBtn8 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1em;
+  font-family: fantasy;
+  background-color: rgba(24, 112, 146, 0);
+  border: none;
+}
+
+/* The Modal (background) */
+.modal8 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+.modal-content8 {
+  background-color: rgba(223, 78, 78, 0.678);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid rgba(243, 83, 83, 0.795);
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close8 {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* 夜空 */
+.button9:active {
+  transform: translateY(5px);
+}
+.button9.art {
+  transform: translateY(5px);
+}
+
+#myBtn9 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1em;
+  font-family: fantasy;
+  background-color: rgba(24, 112, 146, 0);
+  border: none;
+}
+
+/* The Modal (background) */
+.modal9 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+.modal-content9 {
+  background-color: rgba(138, 98, 190, 0.712);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid rgba(66, 0, 153, 0.52);
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close9 {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* 生命 */
+.button10:active {
+  transform: translateY(5px);
+}
+.button10.art {
+  transform: translateY(5px);
+}
+
+#myBtn10 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1em;
+  font-family: fantasy;
+  background-color: rgba(24, 112, 146, 0);
+  border: none;
+}
+
+/* The Modal (background) */
+.modal10 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+.modal-content10 {
+  background-color: rgba(102, 214, 50, 0.781);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid rgba(80, 226, 13, 0.63);
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close10 {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* 没有 */
+.button11:active {
+  transform: translateY(5px);
+}
+.button11.art {
+  transform: translateY(5px);
+}
+
+#myBtn11 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1em;
+  font-family: fantasy;
+  background-color: rgba(24, 112, 146, 0);
+  border: none;
+}
+
+/* The Modal (background) */
+.modal11 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+.modal-content11 {
+  background-color: rgba(21, 126, 196, 0.658);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid rgba(6, 147, 241, 0.678);
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close11 {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* 抱怨 */
+.button12:active {
+  transform: translateY(5px);
+}
+.button12.art {
+  transform: translateY(5px);
+}
+
+#myBtn12 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1em;
+  font-family: fantasy;
+  background-color: rgba(24, 112, 146, 0);
+  border: none;
+}
+
+/* The Modal (background) */
+.modal12 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+.modal-content12 {
+  background-color: rgba(145, 160, 170, 0.877);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid rgba(95, 110, 121, 0.75);
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close12 {
+  color: rgb(255, 255, 255);
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}

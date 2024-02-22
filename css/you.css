@@ -1,0 +1,84 @@
+body {
+  background: rgba(187, 124, 189, 0.55);
+  margin: 2em;
+  padding: 30px;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+.header-one {
+  color: rgb(87, 52, 88);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: 13%;
+  font-family: fantasy;
+}
+
+.header-two {
+  color: rgb(87, 52, 88);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: 13%;
+  font-family: fantasy;
+}
+
+.header-three {
+  color: rgb(87, 52, 88);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: 13%;
+  font-family: fantasy;
+}
+
+.header-four {
+  color: rgb(87, 52, 88);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: inherit;
+  font-family: fantasy;
+}
+
+.header-five {
+  color: rgb(87, 52, 88);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: inherit;
+  font-family: fantasy;
+}
+
+.header-six {
+  color: rgb(87, 52, 88);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: inherit;
+  font-family: fantasy;
+}
+
+.header-seven {
+  color: rgb(87, 52, 88);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: inherit;
+  font-family: fantasy;
+}
+.header-eight {
+  color: rgb(87, 52, 88);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: inherit;
+  font-family: fantasy;
+}
+.header-nine {
+  color: rgb(87, 52, 88);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: inherit;
+  font-family: fantasy;
+}
+.header-ten {
+  color: rgb(87, 52, 88);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: inherit;
+  font-family: fantasy;
+}

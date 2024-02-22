@@ -1,0 +1,54 @@
+body {
+  background: rgba(66, 156, 73, 0.55);
+  margin: 2em;
+  padding: 30px;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+.header-one {
+  color: rgba(36, 107, 42, 0.85);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: 13%;
+  font-family: fantasy;
+}
+
+.header-two {
+  color: rgba(36, 107, 42, 0.85);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: 13%;
+  font-family: fantasy;
+}
+
+.header-three {
+  color: rgba(36, 107, 42, 0.85);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: 13%;
+  font-family: fantasy;
+}
+
+.header-four {
+  color: rgba(36, 107, 42, 0.85);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: 13%;
+  font-family: fantasy;
+}
+
+.header-five {
+  color: rgba(36, 107, 42, 0.85);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: 13%;
+  font-family: fantasy;
+}
+.header-six {
+  color: rgba(36, 107, 42, 0.85);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: 13%;
+  font-family: fantasy;
+}

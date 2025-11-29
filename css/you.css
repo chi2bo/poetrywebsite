@@ -34,7 +34,7 @@ body {
   color: rgb(87, 52, 88);
   font-weight: normal;
   font-size: larger;
-  text-indent: inherit;
+  text-indent: 13%;
   font-family: fantasy;
 }
 
@@ -42,7 +42,7 @@ body {
   color: rgb(87, 52, 88);
   font-weight: normal;
   font-size: larger;
-  text-indent: inherit;
+  text-indent: 13%;
   font-family: fantasy;
 }
 
@@ -50,7 +50,7 @@ body {
   color: rgb(87, 52, 88);
   font-weight: normal;
   font-size: larger;
-  text-indent: inherit;
+  text-indent: 13%;
   font-family: fantasy;
 }
 
@@ -58,27 +58,51 @@ body {
   color: rgb(87, 52, 88);
   font-weight: normal;
   font-size: larger;
-  text-indent: inherit;
+  text-indent: 13%;
   font-family: fantasy;
 }
 .header-eight {
   color: rgb(87, 52, 88);
   font-weight: normal;
   font-size: larger;
-  text-indent: inherit;
+  text-indent: 13%;
   font-family: fantasy;
 }
 .header-nine {
   color: rgb(87, 52, 88);
   font-weight: normal;
   font-size: larger;
-  text-indent: inherit;
+  text-indent: 13%;
   font-family: fantasy;
 }
 .header-ten {
   color: rgb(87, 52, 88);
   font-weight: normal;
   font-size: larger;
-  text-indent: inherit;
+  text-indent: 13%;
+  font-family: fantasy;
+}
+
+.header-eleven {
+  color: rgb(87, 52, 88);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: 13%;
+  font-family: fantasy;
+}
+
+.header-twelve {
+  color: rgb(87, 52, 88);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: 13%;
+  font-family: fantasy;
+}
+
+.header-thirteen {
+  color: rgb(87, 52, 88);
+  font-weight: normal;
+  font-size: larger;
+  text-indent: 13%;
   font-family: fantasy;
 }

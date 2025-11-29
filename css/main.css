@@ -5,6 +5,298 @@ body {
   font-family: fantasy;
   text-transform: uppercase;
   font-size: 1.2em;
+  overflow-x: hidden;
+}
+
+body.animation-active {
+  overflow: hidden;
+}
+
+/* Entry Animation Styles */
+.entry-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #87CEEB 0%, #FFFACD 100%);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  will-change: opacity;
+}
+
+.entry-animation.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease-out;
+}
+
+/* Cloud styles removed - using only floating poem lines */
+
+/* Poem Lines Container */
+.poem-lines-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Floating Poem Lines - Optimized with varying sizes */
+.floating-poem-line {
+  position: absolute;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  padding: 5px 12px;
+  border-radius: 12px;
+  animation: floatPoemLine 20s linear forwards;
+  letter-spacing: 0.3px;
+  will-change: transform, opacity;
+  transform: translateZ(0); /* GPU acceleration */
+}
+
+/* Font size variations */
+.floating-poem-line.size-small {
+  font-size: 0.75em;
+  padding: 4px 10px;
+}
+
+.floating-poem-line.size-medium {
+  font-size: 0.95em;
+  padding: 5px 12px;
+}
+
+.floating-poem-line.size-large {
+  font-size: 1.2em;
+  padding: 6px 14px;
+}
+
+.floating-poem-line.size-xlarge {
+  font-size: 1.4em;
+  padding: 7px 16px;
+}
+
+/* Category color palettes for poem lines - simplified */
+.floating-poem-line.color-love {
+  color: rgba(180, 80, 80, 1);
+  background: rgba(255, 150, 150, 0.5);
+}
+
+.floating-poem-line.color-you {
+  color: rgba(140, 70, 150, 1);
+  background: rgba(187, 124, 189, 0.5);
+}
+
+.floating-poem-line.color-me {
+  color: rgba(30, 130, 50, 1);
+  background: rgba(66, 156, 73, 0.5);
+}
+
+.floating-poem-line.color-people {
+  color: rgba(190, 140, 40, 1);
+  background: rgba(238, 185, 88, 0.5);
+}
+
+.floating-poem-line.color-walking {
+  color: rgba(10, 80, 110, 1);
+  background: rgba(24, 112, 146, 0.5);
+}
+
+.floating-poem-line.color-water {
+  color: rgba(60, 150, 200, 1);
+  background: rgba(120, 201, 252, 0.5);
+}
+
+.floating-poem-line.color-sunshine {
+  color: rgba(210, 90, 10, 1);
+  background: rgba(241, 129, 38, 0.5);
+}
+
+.floating-poem-line.color-random {
+  color: rgba(190, 40, 40, 1);
+  background: rgba(223, 78, 78, 0.5);
+}
+
+.floating-poem-line.color-night {
+  color: rgba(70, 0, 170, 1);
+  background: rgba(66, 0, 153, 0.5);
+}
+
+.floating-poem-line.color-life {
+  color: rgba(50, 190, 0, 1);
+  background: rgba(80, 226, 13, 0.5);
+}
+
+.floating-poem-line.color-nothing {
+  color: rgba(0, 110, 190, 1);
+  background: rgba(6, 147, 241, 0.5);
+}
+
+.floating-poem-line.color-complain {
+  color: rgba(60, 80, 90, 1);
+  background: rgba(95, 110, 121, 0.5);
+}
+
+@keyframes floatPoemLine {
+  0% {
+    transform: translate3d(-400px, 0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.95;
+  }
+  90% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(calc(100vw + 400px), 0, 0);
+    opacity: 0;
+  }
+}
+
+/* Sun Container */
+.sun-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  opacity: 0;
+  animation: revealSun 1s ease-out 12s forwards;
+}
+
+.sun-container.hide-sun {
+  animation: hideSun 1s ease-out forwards;
+}
+
+.sun {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.sun-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #FFD700 0%, #FFA500 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+  z-index: 2;
+  will-change: transform;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.sun-rays {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, transparent 60%, rgba(255, 215, 0, 0.2) 70%, transparent 80%);
+  animation: rotate 20s linear infinite;
+  will-change: transform;
+}
+
+.poem-count {
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #FFF;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: 'Arial', sans-serif;
+  animation: countUp 0.8s ease-out 12.2s forwards;
+  opacity: 0;
+}
+
+.sun-label {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #333;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  font-family: 'Arial', sans-serif;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out 12.5s forwards;
+}
+
+@keyframes revealSun {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes hideSun {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  to {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Hide main content initially */
+.main-content-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.main-content-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 1s ease-in;
 }
 .navbar {
   background: linear-gradient(to right, rgb(68, 168, 175), rgb(21, 80, 136));
@@ -94,7 +386,19 @@ span {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Prevent page scrolling */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark transparent backdrop */
+  backdrop-filter: blur(4px); /* Frosted glass effect */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .love-content {
@@ -104,19 +408,45 @@ span {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: rgba(255, 150, 150, 0.8);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid rgba(255, 205, 205, 0.6);
-  width: 80%; /* Could be more or less, depending on screen size */
+  background-color: rgba(255, 150, 150, 0.85);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 30px 40px;
+  padding-top: 70px; /* Extra space for close button */
+  border: 2px solid rgba(255, 205, 205, 0.8);
+  border-radius: 20px; /* Rounded corners for cute look */
+  box-shadow: 0 8px 32px rgba(255, 150, 150, 0.4), 
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset; /* Professional depth */
+  width: 85%;
+  max-width: 600px;
+  max-height: 500px; /* Fixed height for ~7 title blocks */
+  overflow-y: auto; /* Enable scrolling within modal */
+  animation: slideDown 0.3s ease-out;
+  position: relative;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* The Close Button */
 .close {
   color: rgb(255, 255, 255);
-  float: right;
+  position: absolute;
+  top: 15px;
+  right: 20px;
   font-size: 40px;
   font-weight: bold;
+  line-height: 1;
+  z-index: 10;
 }
 
 /* 你 */
@@ -145,23 +475,41 @@ span {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Prevent page scrolling */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark transparent backdrop */
+  backdrop-filter: blur(4px); /* Frosted glass effect */
+  animation: fadeIn 0.3s ease-in-out;
 }
 /* Modal Content/Box */
 .modal-content2 {
-  background-color: rgba(187, 124, 189, 0.801);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid rgba(255, 205, 255, 0.6);
-  width: 80%; /* Could be more or less, depending on screen size */
+  background-color: rgba(187, 124, 189, 0.85);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 30px 40px;
+  padding-top: 70px; /* Extra space for close button */
+  border: 2px solid rgba(255, 205, 255, 0.8);
+  border-radius: 20px; /* Rounded corners for cute look */
+  box-shadow: 0 8px 32px rgba(187, 124, 189, 0.4), 
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset; /* Professional depth */
+  width: 85%;
+  max-width: 600px;
+  max-height: 500px; /* Fixed height for ~7 title blocks */
+  overflow-y: auto; /* Enable scrolling within modal */
+  animation: slideDown 0.3s ease-out;
+  position: relative;
 }
 
 /* The Close Button */
 .close2 {
   color: rgb(255, 255, 255);
-  float: right;
+  position: absolute;
+  top: 15px;
+  right: 20px;
   font-size: 40px;
   font-weight: bold;
+  line-height: 1;
+  z-index: 10;
 }
 
 /* 我 */
@@ -190,23 +538,41 @@ span {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Prevent page scrolling */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark transparent backdrop */
+  backdrop-filter: blur(4px); /* Frosted glass effect */
+  animation: fadeIn 0.3s ease-in-out;
 }
 /* Modal Content/Box */
 .modal-content3 {
-  background-color: rgba(85, 194, 94, 0.822);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid rgba(134, 190, 139, 0.85);
-  width: 80%; /* Could be more or less, depending on screen size */
+  background-color: rgba(85, 194, 94, 0.85);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 30px 40px;
+  padding-top: 70px; /* Extra space for close button */
+  border: 2px solid rgba(134, 190, 139, 0.9);
+  border-radius: 20px; /* Rounded corners for cute look */
+  box-shadow: 0 8px 32px rgba(85, 194, 94, 0.4), 
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset; /* Professional depth */
+  width: 85%;
+  max-width: 600px;
+  max-height: 500px; /* Fixed height for ~7 title blocks */
+  overflow-y: auto; /* Enable scrolling within modal */
+  animation: slideDown 0.3s ease-out;
+  position: relative;
 }
 
 /* The Close Button */
 .close3 {
   color: rgb(255, 255, 255);
-  float: right;
+  position: absolute;
+  top: 15px;
+  right: 20px;
   font-size: 40px;
   font-weight: bold;
+  line-height: 1;
+  z-index: 10;
 }
 /* 人们 */
 .button4:active {
@@ -234,24 +600,42 @@ span {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Prevent page scrolling */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark transparent backdrop */
+  backdrop-filter: blur(4px); /* Frosted glass effect */
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 /* Modal Content/Box */
 .modal-content4 {
   background-color: rgba(238, 185, 88, 0.85);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid rgba(238, 185, 88, 0.85);
-  width: 80%; /* Could be more or less, depending on screen size */
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 30px 40px;
+  padding-top: 70px; /* Extra space for close button */
+  border: 2px solid rgba(238, 185, 88, 0.9);
+  border-radius: 20px; /* Rounded corners for cute look */
+  box-shadow: 0 8px 32px rgba(238, 185, 88, 0.4), 
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset; /* Professional depth */
+  width: 85%;
+  max-width: 600px;
+  max-height: 500px; /* Fixed height for ~7 title blocks */
+  overflow-y: auto; /* Enable scrolling within modal */
+  animation: slideDown 0.3s ease-out;
+  position: relative;
 }
 
 /* The Close Button */
 .close4 {
   color: rgb(255, 255, 255);
-  float: right;
+  position: absolute;
+  top: 15px;
+  right: 20px;
   font-size: 40px;
   font-weight: bold;
+  line-height: 1;
+  z-index: 10;
 }
 
 /* 走路 */
@@ -280,24 +664,42 @@ span {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Prevent page scrolling */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark transparent backdrop */
+  backdrop-filter: blur(4px); /* Frosted glass effect */
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 /* Modal Content/Box */
 .modal-content5 {
-  background-color: rgba(57, 114, 136, 0.88);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid rgba(46, 106, 129, 0.6);
-  width: 80%; /* Could be more or less, depending on screen size */
+  background-color: rgba(57, 114, 136, 0.85);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 30px 40px;
+  padding-top: 70px; /* Extra space for close button */
+  border: 2px solid rgba(46, 106, 129, 0.8);
+  border-radius: 20px; /* Rounded corners for cute look */
+  box-shadow: 0 8px 32px rgba(57, 114, 136, 0.4), 
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset; /* Professional depth */
+  width: 85%;
+  max-width: 600px;
+  max-height: 500px; /* Fixed height for ~7 title blocks */
+  overflow-y: auto; /* Enable scrolling within modal */
+  animation: slideDown 0.3s ease-out;
+  position: relative;
 }
 
 /* The Close Button */
 .close5 {
   color: rgb(255, 255, 255);
-  float: right;
+  position: absolute;
+  top: 15px;
+  right: 20px;
   font-size: 40px;
   font-weight: bold;
+  line-height: 1;
+  z-index: 10;
 }
 
 /* 水 */
@@ -326,24 +728,42 @@ span {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Prevent page scrolling */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark transparent backdrop */
+  backdrop-filter: blur(4px); /* Frosted glass effect */
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 /* Modal Content/Box */
 .modal-content6 {
-  background-color: rgba(129, 213, 247, 0.829);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid rgba(110, 205, 243, 0.6);
-  width: 80%; /* Could be more or less, depending on screen size */
+  background-color: rgba(129, 213, 247, 0.85);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 30px 40px;
+  padding-top: 70px; /* Extra space for close button */
+  border: 2px solid rgba(110, 205, 243, 0.8);
+  border-radius: 20px; /* Rounded corners for cute look */
+  box-shadow: 0 8px 32px rgba(129, 213, 247, 0.4), 
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset; /* Professional depth */
+  width: 85%;
+  max-width: 600px;
+  max-height: 500px; /* Fixed height for ~7 title blocks */
+  overflow-y: auto; /* Enable scrolling within modal */
+  animation: slideDown 0.3s ease-out;
+  position: relative;
 }
 
 /* The Close Button */
 .close6 {
   color: rgb(255, 255, 255);
-  float: right;
+  position: absolute;
+  top: 15px;
+  right: 20px;
   font-size: 40px;
   font-weight: bold;
+  line-height: 1;
+  z-index: 10;
 }
 
 /* 阳光 */
@@ -372,24 +792,42 @@ span {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Prevent page scrolling */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark transparent backdrop */
+  backdrop-filter: blur(4px); /* Frosted glass effect */
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 /* Modal Content/Box */
 .modal-content7 {
-  background-color: rgba(253, 127, 23, 0.747);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid rgba(255, 115, 0, 0.76);
-  width: 80%; /* Could be more or less, depending on screen size */
+  background-color: rgba(253, 127, 23, 0.85);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 30px 40px;
+  padding-top: 70px; /* Extra space for close button */
+  border: 2px solid rgba(255, 115, 0, 0.8);
+  border-radius: 20px; /* Rounded corners for cute look */
+  box-shadow: 0 8px 32px rgba(253, 127, 23, 0.4), 
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset; /* Professional depth */
+  width: 85%;
+  max-width: 600px;
+  max-height: 500px; /* Fixed height for ~7 title blocks */
+  overflow-y: auto; /* Enable scrolling within modal */
+  animation: slideDown 0.3s ease-out;
+  position: relative;
 }
 
 /* The Close Button */
 .close7 {
   color: rgb(255, 255, 255);
-  float: right;
+  position: absolute;
+  top: 15px;
+  right: 20px;
   font-size: 40px;
   font-weight: bold;
+  line-height: 1;
+  z-index: 10;
 }
 
 /* 胡思乱想 */
@@ -418,24 +856,42 @@ span {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Prevent page scrolling */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark transparent backdrop */
+  backdrop-filter: blur(4px); /* Frosted glass effect */
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 /* Modal Content/Box */
 .modal-content8 {
-  background-color: rgba(223, 78, 78, 0.678);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid rgba(243, 83, 83, 0.795);
-  width: 80%; /* Could be more or less, depending on screen size */
+  background-color: rgba(223, 78, 78, 0.85);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 30px 40px;
+  padding-top: 70px; /* Extra space for close button */
+  border: 2px solid rgba(243, 83, 83, 0.8);
+  border-radius: 20px; /* Rounded corners for cute look */
+  box-shadow: 0 8px 32px rgba(223, 78, 78, 0.4), 
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset; /* Professional depth */
+  width: 85%;
+  max-width: 600px;
+  max-height: 500px; /* Fixed height for ~7 title blocks */
+  overflow-y: auto; /* Enable scrolling within modal */
+  animation: slideDown 0.3s ease-out;
+  position: relative;
 }
 
 /* The Close Button */
 .close8 {
   color: rgb(255, 255, 255);
-  float: right;
+  position: absolute;
+  top: 15px;
+  right: 20px;
   font-size: 40px;
   font-weight: bold;
+  line-height: 1;
+  z-index: 10;
 }
 
 /* 夜空 */
@@ -464,24 +920,42 @@ span {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Prevent page scrolling */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark transparent backdrop */
+  backdrop-filter: blur(4px); /* Frosted glass effect */
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 /* Modal Content/Box */
 .modal-content9 {
-  background-color: rgba(138, 98, 190, 0.712);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid rgba(66, 0, 153, 0.52);
-  width: 80%; /* Could be more or less, depending on screen size */
+  background-color: rgba(138, 98, 190, 0.85);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 30px 40px;
+  padding-top: 70px; /* Extra space for close button */
+  border: 2px solid rgba(66, 0, 153, 0.8);
+  border-radius: 20px; /* Rounded corners for cute look */
+  box-shadow: 0 8px 32px rgba(138, 98, 190, 0.4), 
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset; /* Professional depth */
+  width: 85%;
+  max-width: 600px;
+  max-height: 500px; /* Fixed height for ~7 title blocks */
+  overflow-y: auto; /* Enable scrolling within modal */
+  animation: slideDown 0.3s ease-out;
+  position: relative;
 }
 
 /* The Close Button */
 .close9 {
   color: rgb(255, 255, 255);
-  float: right;
+  position: absolute;
+  top: 15px;
+  right: 20px;
   font-size: 40px;
   font-weight: bold;
+  line-height: 1;
+  z-index: 10;
 }
 
 /* 生命 */
@@ -510,24 +984,42 @@ span {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Prevent page scrolling */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark transparent backdrop */
+  backdrop-filter: blur(4px); /* Frosted glass effect */
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 /* Modal Content/Box */
 .modal-content10 {
-  background-color: rgba(102, 214, 50, 0.781);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid rgba(80, 226, 13, 0.63);
-  width: 80%; /* Could be more or less, depending on screen size */
+  background-color: rgba(102, 214, 50, 0.85);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 30px 40px;
+  padding-top: 70px; /* Extra space for close button */
+  border: 2px solid rgba(80, 226, 13, 0.8);
+  border-radius: 20px; /* Rounded corners for cute look */
+  box-shadow: 0 8px 32px rgba(102, 214, 50, 0.4), 
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset; /* Professional depth */
+  width: 85%;
+  max-width: 600px;
+  max-height: 500px; /* Fixed height for ~7 title blocks */
+  overflow-y: auto; /* Enable scrolling within modal */
+  animation: slideDown 0.3s ease-out;
+  position: relative;
 }
 
 /* The Close Button */
 .close10 {
   color: rgb(255, 255, 255);
-  float: right;
+  position: absolute;
+  top: 15px;
+  right: 20px;
   font-size: 40px;
   font-weight: bold;
+  line-height: 1;
+  z-index: 10;
 }
 
 /* 没有 */
@@ -556,24 +1048,42 @@ span {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Prevent page scrolling */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark transparent backdrop */
+  backdrop-filter: blur(4px); /* Frosted glass effect */
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 /* Modal Content/Box */
 .modal-content11 {
-  background-color: rgba(21, 126, 196, 0.658);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid rgba(6, 147, 241, 0.678);
-  width: 80%; /* Could be more or less, depending on screen size */
+  background-color: rgba(21, 126, 196, 0.85);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 30px 40px;
+  padding-top: 70px; /* Extra space for close button */
+  border: 2px solid rgba(6, 147, 241, 0.8);
+  border-radius: 20px; /* Rounded corners for cute look */
+  box-shadow: 0 8px 32px rgba(21, 126, 196, 0.4), 
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset; /* Professional depth */
+  width: 85%;
+  max-width: 600px;
+  max-height: 500px; /* Fixed height for ~7 title blocks */
+  overflow-y: auto; /* Enable scrolling within modal */
+  animation: slideDown 0.3s ease-out;
+  position: relative;
 }
 
 /* The Close Button */
 .close11 {
   color: rgb(255, 255, 255);
-  float: right;
+  position: absolute;
+  top: 15px;
+  right: 20px;
   font-size: 40px;
   font-weight: bold;
+  line-height: 1;
+  z-index: 10;
 }
 
 /* 抱怨 */
@@ -602,22 +1112,181 @@ span {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden; /* Prevent page scrolling */
+  background-color: rgba(0, 0, 0, 0.5); /* Dark transparent backdrop */
+  backdrop-filter: blur(4px); /* Frosted glass effect */
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 /* Modal Content/Box */
 .modal-content12 {
-  background-color: rgba(145, 160, 170, 0.877);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid rgba(95, 110, 121, 0.75);
-  width: 80%; /* Could be more or less, depending on screen size */
+  background-color: rgba(145, 160, 170, 0.85);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 30px 40px;
+  padding-top: 70px; /* Extra space for close button */
+  border: 2px solid rgba(95, 110, 121, 0.8);
+  border-radius: 20px; /* Rounded corners for cute look */
+  box-shadow: 0 8px 32px rgba(145, 160, 170, 0.4), 
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset; /* Professional depth */
+  width: 85%;
+  max-width: 600px;
+  max-height: 500px; /* Fixed height for ~7 title blocks */
+  overflow-y: auto; /* Enable scrolling within modal */
+  animation: slideDown 0.3s ease-out;
+  position: relative;
 }
 
 /* The Close Button */
 .close12 {
   color: rgb(255, 255, 255);
-  float: right;
+  position: absolute;
+  top: 15px;
+  right: 20px;
   font-size: 40px;
   font-weight: bold;
+  line-height: 1;
+  z-index: 10;
+}
+
+/* Custom scrollbar styling for modal content */
+.modal-content::-webkit-scrollbar,
+.modal-content2::-webkit-scrollbar,
+.modal-content3::-webkit-scrollbar,
+.modal-content4::-webkit-scrollbar,
+.modal-content5::-webkit-scrollbar,
+.modal-content6::-webkit-scrollbar,
+.modal-content7::-webkit-scrollbar,
+.modal-content8::-webkit-scrollbar,
+.modal-content9::-webkit-scrollbar,
+.modal-content10::-webkit-scrollbar,
+.modal-content11::-webkit-scrollbar,
+.modal-content12::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track,
+.modal-content2::-webkit-scrollbar-track,
+.modal-content3::-webkit-scrollbar-track,
+.modal-content4::-webkit-scrollbar-track,
+.modal-content5::-webkit-scrollbar-track,
+.modal-content6::-webkit-scrollbar-track,
+.modal-content7::-webkit-scrollbar-track,
+.modal-content8::-webkit-scrollbar-track,
+.modal-content9::-webkit-scrollbar-track,
+.modal-content10::-webkit-scrollbar-track,
+.modal-content11::-webkit-scrollbar-track,
+.modal-content12::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb,
+.modal-content2::-webkit-scrollbar-thumb,
+.modal-content3::-webkit-scrollbar-thumb,
+.modal-content4::-webkit-scrollbar-thumb,
+.modal-content5::-webkit-scrollbar-thumb,
+.modal-content6::-webkit-scrollbar-thumb,
+.modal-content7::-webkit-scrollbar-thumb,
+.modal-content8::-webkit-scrollbar-thumb,
+.modal-content9::-webkit-scrollbar-thumb,
+.modal-content10::-webkit-scrollbar-thumb,
+.modal-content11::-webkit-scrollbar-thumb,
+.modal-content12::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover,
+.modal-content2::-webkit-scrollbar-thumb:hover,
+.modal-content3::-webkit-scrollbar-thumb:hover,
+.modal-content4::-webkit-scrollbar-thumb:hover,
+.modal-content5::-webkit-scrollbar-thumb:hover,
+.modal-content6::-webkit-scrollbar-thumb:hover,
+.modal-content7::-webkit-scrollbar-thumb:hover,
+.modal-content8::-webkit-scrollbar-thumb:hover,
+.modal-content9::-webkit-scrollbar-thumb:hover,
+.modal-content10::-webkit-scrollbar-thumb:hover,
+.modal-content11::-webkit-scrollbar-thumb:hover,
+.modal-content12::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Enhanced link styling for all modal content boxes */
+.modal-content a,
+.modal-content2 a,
+.modal-content3 a,
+.modal-content4 a,
+.modal-content5 a,
+.modal-content6 a,
+.modal-content7 a,
+.modal-content8 a,
+.modal-content9 a,
+.modal-content10 a,
+.modal-content11 a,
+.modal-content12 a {
+  display: block;
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.95em;
+  text-transform: none;
+}
+
+.modal-content a:hover,
+.modal-content2 a:hover,
+.modal-content3 a:hover,
+.modal-content4 a:hover,
+.modal-content5 a:hover,
+.modal-content6 a:hover,
+.modal-content7 a:hover,
+.modal-content8 a:hover,
+.modal-content9 a:hover,
+.modal-content10 a:hover,
+.modal-content11 a:hover,
+.modal-content12 a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content a p,
+.modal-content2 a p,
+.modal-content3 a p,
+.modal-content4 a p,
+.modal-content5 a p,
+.modal-content6 a p,
+.modal-content7 a p,
+.modal-content8 a p,
+.modal-content9 a p,
+.modal-content10 a p,
+.modal-content11 a p,
+.modal-content12 a p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Close button hover effects */
+.close:hover,
+.close2:hover,
+.close3:hover,
+.close4:hover,
+.close5:hover,
+.close6:hover,
+.close7:hover,
+.close8:hover,
+.close9:hover,
+.close10:hover,
+.close11:hover,
+.close12:hover {
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.2s ease;
 }
